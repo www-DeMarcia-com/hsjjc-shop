@@ -1,0 +1,39 @@
+server:
+  port: 8071
+  
+spring:
+  application:
+    name: shop-index-web
+  redis:
+    port: 6379
+    password: 
+    host: localhost
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8051/eureka/  
+  instance:
+    prefer-ip-address: true 
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+    
+feign:
+  hystrix:
+    enabled: true
+
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+    
+    
+#spring.beetl.root: classpath:/templates/
+#spring.beetl.prefix: 
+#spring.beetl.suffix: .html
+#spring.beetl.order:  0
+#spring.beetl.cofig: classpath:beetl.properties
+
+isneedSMS: 1 #0是1否   是否需要手机短信

@@ -1,0 +1,211 @@
+<header class="row" id="header">
+        <div class="row m0 top_menus">
+            <div class="container">
+                <div class="row">
+                    <ul class="nav nav-pills fleft">
+                        <li><a href="/shop-index-web/index">首页</a></li>
+                        <li><a href="/shop-index-web/about">关于</a></li>
+                        <li><a href="/shop-index-web/contact">联系我们</a></li>
+                    </ul>
+                    <% 
+                    if(session["user"]!=null){
+                    %>
+                    <ul class="nav nav-pills fright">
+                    	<li><a href="/shop-user-web/info">欢迎 ${session.user.nickname}</a></li>
+                        <li><a href="/shop-cart-web/cart">购物车</a></li>
+                        <li><a href="/shop-order-web/order">订单跟踪</a></li>
+                        <li><a href="/shop-user-web/account">我的账户</a></li>
+                        <li><a href="/shop-index-web/logout">退 出</a></li>
+                    </ul>
+                   <%  
+                   }else{ 
+                   %>
+                    <ul class="nav nav-pills fright">
+                        <li><a href="/shop-index-web/registry">注册</a></li>
+                        <li><a href="/shop-index-web/login">登录</a></li>
+                    </ul>
+                   <% 
+                   }
+                   %>
+                </div>
+            </div>
+        </div>
+        <div class="row m0 logo_line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 logo">
+                        <a href="index.html" class="logo_a"><img src="images/logo.png" alt="Furniture House"></a>
+                    </div>
+                    <div class="col-sm-7 searchSec">
+                        <div class="fleft searchForm">
+                            <form action="#" method="get">
+                                <div class="input-group">
+                                    <input type="hidden" name="search_param" value="all" id="search_param">
+                                    <input type="search" class="form-control" placeholder="Search Products">
+                                    <div class="input-group-btn searchFilters">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <span id="searchFilterValue">所有类别</span> <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                            <li><a href="#all">所有类别</a></li>
+                                            <li><a href="#chairs">椅子</a></li>
+                                            <li><a href="#tables">桌子</a></li>
+                                            <li><a href="#dressers">梳妆台</a></li>
+                                            <li><a href="#desk">书桌</a></li>
+                                            <li><a href="#beds">床</a></li>
+                                            <li><a href="#benches">benches</a></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                    <span class="input-group-btn searchIco">
+                                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </form>
+                        </div>
+                        <div class="fleft wishlistCompare">
+                            <ul class="nav">
+                                <li><a href="#"><i class="fa fa-heart"></i> 收藏 (3)</a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i> 比较 (2)</a></li>
+                            </ul>
+                        </div>
+                        <div class="fleft cartCount">                        
+                            <div class="cartCountInner row m0">
+                                <span class="badge">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default m0 navbar-static-top">
+            <div class="container-fluid container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+                        <i class="fa fa-bars"></i> 导航
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/shop-index-web/index">首页</a>
+                           <!--  <ul class="dropdown-menu" role="menu">
+                                <li><a href="index.html">默认首页</a></li>
+                                <li><a href="index3.html">首页 2</a></li>
+                                <li><a href="index2.html">首页 - 菜单 2</a></li>
+                                <li><a href="index3.html">首页 2 - 菜单 2</a></li>
+                            </ul> -->
+                        </li>
+                        <li><a href="/shop-index-web/about">关于我们</a></li>
+                         <li><a href="/shop-index-web/blog">新闻</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">网页</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="services.html">服务</a></li>
+                                <li><a href="blog.html">博客</a></li>
+                                <li><a href="single-post.html">单一职位</a></li>
+                                <li><a href="shortcodes.html">简码</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="dropdown megaMenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">超级菜单</a>
+                            <ul class="dropdown-menu row m0" role="menu">
+                                <li class="listMenu">
+                                    <div class="row listTitle">沙发 &amp; sectionals</div>
+                                    <ul class="nav megaInnerMenu">
+                                        <li><a href="#chairs">椅子</a></li>
+                                        <li><a href="#tables">桌子</a></li>
+                                        <li><a href="#dressers">梳妆台</a></li>
+                                        <li><a href="#desk">书桌</a></li>
+                                        <li><a href="#beds">床</a></li>
+                                        <li><a href="#benches">长椅</a></li>
+                                        <li><a href="#moroccan">摩洛哥</a></li>
+                                        <li><a href="#poufs">粉扑</a></li>
+                                        <li><a href="#screen">屏幕</a></li>
+                                    </ul>
+                                </li>
+                                <li class="listMenu">
+                                    <div class="row listTitle">按收藏品购物</div>
+                                    <ul class="nav megaInnerMenu">
+                                        <li><a href="#bond">优惠卷</a></li>
+                                        <li><a href="#whitaker">惠特克</a></li>
+                                        <li><a href="#arden">雅顿</a></li>
+                                        <li><a href="#channing">钱宁</a></li>
+                                        <li><a href="#delphine">德尔菲娜</a></li>
+                                        <li><a href="#jacque">雅克</a></li>
+                                        <li><a href="#lampert">兰伯特</a></li>
+                                    </ul>
+                                </li>
+                                <li class="boxMenu">
+                                    <div class="row listTitle">
+                                        按类别				购物 <a href="product.html">所有 <i class="fa fa-caret-right"></i></a>
+                                    </div>
+                                    <ul class="nav megaInnerMenu row m0">
+                                        <li><a href="product2.html">
+                                            <div class="row m0 imgHov">
+                                                <img src="images/menu/1.png" alt="">
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        现在购物 <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">办公家具</div>
+                                        </a></li>
+                                        <li><a href="product.html">
+                                            <div class="row m0 imgHov">
+                                                <img src="images/menu/2.png" alt="">
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        现在购物 <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">沙发 &amp; 床</div>
+                                        </a></li>
+                                        <li><a href="product2.html">
+                                            <div class="row m0 imgHov">
+                                                <img src="images/menu/3.png" alt="">
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        现在购物 <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">餐桌</div>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>                        
+                        <li class="dropdown">
+                            <a href="product.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">产品</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="product.html">产品</a></li>
+                                <li><a href="product2.html">产品 2</a></li>
+                                <li><a href="single-product.html">单一产品</a></li>
+                                <li><a href="catalog.html">目录</a></li>
+                                <li><a href="cart.html">购物车</a></li>
+                                <li><a href="checkout.html">查看</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">休息室</a></li>
+                        <li><a href="#">实木</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>              
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="row topFeatures m0">
+            <div class="container">
+                <ul class="nav nav-justified text-center">
+                    <li><img src="images/icons/returns.png" alt="">30天退货</li>
+                    <li><img src="images/icons/delivery-car.png" alt="">交货快</li>
+                    <li><img src="images/icons/tel24-7.png" alt="">7天24小时在线服务</li>
+                </ul>
+            </div>
+        </div>
+    </header> <!--Header-->
