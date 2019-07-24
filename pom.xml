@@ -34,6 +34,7 @@
 		<module>shop-search-web</module>
 		<module>shop-mail-service</module>
 		<module>shop-item-service-api</module>
+		<module>shop-config-server</module>
 	</modules>
 	<dependencies>
 		<dependency>
